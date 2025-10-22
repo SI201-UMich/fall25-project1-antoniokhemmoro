@@ -1,6 +1,14 @@
 # Name: Antonio Khemmoro 
 # Student ID: 71867697
-# Email: khemmoro@umich.edu 
+# Email: khemmoro@umich.edu
+# Collaborators: Matthew Khemmoro
+# Collaborated equally on this project. Each wrote two distinct calculations:
+# Antonio: calculate_avg_sales_by_category(), calculate_percent_profitable()
+# Matthew: calculate_avg_profit_by_region(), calculate_percent_discounted()
+# Also, we both worked together on the shared components of the script:
+# - read_csv_file(): for loading and preprocessing the data
+# - generate_report(): for formatting the output
+# - main(): for orchestrating the program execution
 
 import csv
 # Load CSV Data (Collaborated together)
