@@ -79,3 +79,15 @@ def generate_report(avg_profit, percent_discounted, avg_sales, percent_profitabl
         for cat, sales in avg_sales.items():
             f.write(f"{cat}: ${sales}\n")
         f.write(f"\nPercentage of Orders with Profit > 0: {percent_profitable}%\n")
+
+def main():
+    superstore_data = read_csv_file("SampleSuperstore.csv")  # load the CSV file
+    avg_profit = calculate_avg_profit_by_region(superstore_data)  # Matthew 1
+    percent_discounted = calculate_percent_discounted(superstore_data)  # Matthew 2
+    avg_sales = calculate_avg_sales_by_category(superstore_data)  # Antonio 1
+    percent_profitable = calculate_percent_profitable(superstore_data)  # Antonio 2
+
+    generate_report(avg_profit, percent_discounted, avg_sales, percent_profitable)  # write results to txt
+
+if __name__ == "__main__":
+    main() 
