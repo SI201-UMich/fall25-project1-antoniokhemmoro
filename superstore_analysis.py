@@ -13,6 +13,19 @@
 # AI usage: Used ChatGPT to help handle null/NA values in numeric fields, debugging, 
 # and assist with writing parts of the tougher calculations and functions.
 import csv
+# helper to safely convert values to float and treat blanks/NA as None
+def _to_float(x):
+    if x is None:
+        return None
+    if isinstance(x, (int, float)):
+        return float(x)
+    s = str(x).strip()
+    if s == "" or s.lower() in {"na", "n/a", "null", "none"}:
+        return None
+    try:
+        return float(s)
+    except ValueError:
+        return None
 # Load CSV Data (Collaborated together)
 def read_csv_file(filename):
     data = [] 
